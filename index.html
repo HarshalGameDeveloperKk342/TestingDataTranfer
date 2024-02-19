@@ -1,76 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open HTML2 and WebGL</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 20;
-        }
-        h1 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            margin: 20px;
-        }
-        h1 img {
-            width: 25%;
-            height: auto;
-            padding-left: 30px;
-
-        }
-        h2 {
-            padding-left: 10px;
-        }
-        img {
-            width: 500px;
-            height: auto;
-            cursor: pointer;
-            margin: 10px;
-        }
-        .images {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1000px;
-        }
-        .title {
-            margin-top: 10px;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-align: center;
-        }
-    </style>
+  <title>Model Viewer Example</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
-<body>
 
-    <h1> <img src="Wriver logo.jpeg" > </h1>
-    
+<style>
+    body, html {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+    }
 
-    <!-- Images to open HTML2 with the entered name -->
-    <div class="images">
-        <div>
-            <img src="Arcus Sofa 01840x560.jpeg" alt="Sofa" onclick="openHTML2('1')" style="margin-right: 30px;">
-            <div class="title">Arcus Sofa<br>FIUM COLLECTION</div>
-        </div>
-        <div>
-            <img src="Cleave-300-Side-Table-03.jpg" alt="Table" onclick="openHTML2('0')">
-            <div class="title">Cleave 300 Side Table<br>FLEXUS COLLECTION</div>
-        </div>
-    </div>
+    model-viewer {
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
 
-    <!-- JavaScript to open HTML2 with the entered name -->
-    <script>
-        function openHTML2(name) {
-            window.open('UnityBuildFile.html?name=' + name);
-        }
-    </script>
+<body style="margin: 0px; overflow: hidden; " >
+
+    <model-viewer src="glbSofa.glb" alt="A 3D model" auto-rotate camera-controls interaction-prompt></model-viewer>
 
 </body>
 </html>
